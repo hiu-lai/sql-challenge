@@ -1,0 +1,76 @@
+-- Only create tables if it doesn't exists
+-- departments
+CREATE TABLE IF NOT EXISTS departments ( 
+dept_no VARCHAR PRIMARY KEY,
+dept_name VARCHAR);
+
+-- DELETE to enough data copy imported once
+DELETE FROM departments;
+
+COPY departments(dept_no, dept_name)
+FROM 'C:\Users\hk_la\Documents\homeworks\sql-challenge\EmployeeSQL\departments.csv'
+DELIMITER ','
+CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS dept_emp (
+emp_no int PRIMARY KEY,
+dept_no VARCHAR);
+
+DELETE FROM dept_emp;
+
+COPY dept_emp (emp_no, dept_no)
+FROM 'C:\Users\hk_la\Documents\homeworks\sql-challenge\EmployeeSQL\dept_emp.csv'
+DELIMITER ','
+CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS dept_manager (
+dept_no VARCHAR PRIMARY KEY,
+emp_no VARCHAR);
+
+DELETE FROM dept_manager;
+
+COPY dept_emp (dept_no, emp_no)
+FROM 'C:\Users\hk_la\Documents\homeworks\sql-challenge\EmployeeSQL\dept_manager.csv'
+DELIMITER ','
+CSV HEADER;
+
+Drop table employees;
+
+CREATE TABLE IF NOT EXISTS employees (
+emp_no int PRIMARY KEY,
+emp_title VARCHAR,
+birth_date VARCHAR,
+first_name VARCHAR,
+last_name VARCHAR,
+sex VARCHAR,
+hire_date VARCHAR);
+
+DELETE FROM employees;
+
+COPY employees (emp_no, emp_title, birth_Date, first_name, last_name, sex, hire_date)
+FROM 'C:\Users\hk_la\Documents\homeworks\sql-challenge\EmployeeSQL\employees.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+CREATE TABLE IF NOT EXISTS salaries (
+emp_no int PRIMARY KEY,
+salary int);
+
+DELETE FROM salaries;
+
+COPY salaries(emp_no, salary)
+FROM 'C:\Users\hk_la\Documents\homeworks\sql-challenge\EmployeeSQL\salaries.csv'
+DELIMITER ','
+CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS titles (
+title_id VARCHAR PRIMARY KEY,
+title VARCHAR);
+
+DELETE FROM titles;
+
+COPY titles(title_id, title)
+FROM 'C:\Users\hk_la\Documents\homeworks\sql-challenge\EmployeeSQL\titles.csv'
+DELIMITER ','
+CSV HEADER;
