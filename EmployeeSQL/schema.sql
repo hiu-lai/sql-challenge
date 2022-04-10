@@ -2,7 +2,7 @@
 
 DROP TABLE IF EXISTS titles, employees, departments, dept_emp, dept_manager, salaries 
 CASCADE; 
-DROP VIEW IF EXISTS emp_salary CASCADE;
+DROP VIEW IF EXISTS Emp_salary CASCADE;
 
 CREATE TABLE titles (
     title_id VARCHAR   NOT NULL,
