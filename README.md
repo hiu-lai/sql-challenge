@@ -43,32 +43,33 @@ postgresql = {'pguser':'{username}',
             'pgdb': '{database_name}'
             }
 ```
-replace `{username}`, `{password}`and `{host}` with Postgresql login details, `{database_name}` with name setup in **step 5**  
+    replace `{username}`, `{password}`and `{host}` with Postgresql login details, `{database_name}` with name setup in **step 5**  
+
 9. Open and run code file `bonus analysis_ipynb` in jupyter notebook.  
 
 ## Analysis Output
-1. List the following details of each employee: employee number, last name, first name, sex, and salary.
+1. List the following details of each employee: employee number, last name, first name, sex, and salary.  
 ![image](EmployeeSQL/images/task01.png)  
 
-2. List first name, last name, and hire date for employees who were hired in 1986.
+2. List first name, last name, and hire date for employees who were hired in 1986.  
 ![image](EmployeeSQL/images/task02.png)  
 
-3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
+3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.  
 ![image](EmployeeSQL/images/task03.png)  
 
 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 ![image](EmployeeSQL/images/task04.png)  
 
-5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."  
 ![image](EmployeeSQL/images/task05.png)  
 
-6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+6. List all employees in the Sales department, including their employee number, last name, first name, and department name.  
 ![image](EmployeeSQL/images/task06.png)  
 
-7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.  
 ![image](EmployeeSQL/images/task07.png)  
 
-8. List the frequency count of employee last names (i.e., how many employees share each last name) in descending order.
+8. List the frequency count of employee last names (i.e., how many employees share each last name) in descending order.  
 ![image](EmployeeSQL/images/task08.png)  
 
 ### Bonus Analysis
