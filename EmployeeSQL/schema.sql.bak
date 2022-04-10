@@ -81,9 +81,3 @@ COPY salaries(emp_no, salary)
 FROM 'C:\Users\Public\CSV_Files\salaries.csv'
 DELIMITER ','
 CSV HEADER;
-
---CREATE additional VIEW TABLE for Bonus Analysis
-
-CREATE VIEW Emp_salary AS (
-	SELECT employees.emp_no, last_name, first_name, sex, salary, (SELECT title FROM titles WHERE titles.title_id=employees.emp_title_id) FROM employees 
-	INNER JOIN salaries ON employees.emp_no=salaries.emp_no);
