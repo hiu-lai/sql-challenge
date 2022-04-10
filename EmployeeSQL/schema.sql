@@ -1,11 +1,11 @@
-SELECT * FROM departments;
-SELECT * FROM dept_emp;
-SELECT * FROM dept_manager;
-SELECT * FROM employees;
-SELECT * FROM salaries;
-SELECT * FROM titles;
+-- Deleting all tables and views to ensure clean data import
 
-CREATE TABLE IF NOT EXISTS titles (
+DROP TABLE IF EXISTS titles, employees, departments, dept_emp, dept_manager, salaries 
+CASCADE; 
+DROP VIEW IF EXISTS emp_department, emp_mast, emp_sales_department 
+CASCADE;
+
+CREATE TABLE titles (
     title_id VARCHAR   NOT NULL,
     title VARCHAR   NOT NULL,
     PRIMARY KEY (title_id)
@@ -16,7 +16,7 @@ FROM 'C:\Users\Public\CSV_Files\titles.csv'
 DELIMITER ','
 CSV HEADER;
 
-CREATE TABLE IF NOT EXISTS employees (
+CREATE TABLE employees (
     emp_no INT   NOT NULL,
     emp_title_id VARCHAR NOT NULL,
     birth_date DATE   NOT NULL,
@@ -34,7 +34,7 @@ FROM 'C:\Users\Public\CSV_Files\employees.csv'
 DELIMITER ','
 CSV HEADER;
 
-CREATE TABLE IF NOT EXISTS departments (
+CREATE TABLE departments (
     dept_no VARCHAR   NOT NULL,
     dept_name VARCHAR   NOT NULL,
     PRIMARY KEY (dept_no)
@@ -45,7 +45,7 @@ FROM 'C:\Users\Public\CSV_Files\departments.csv'
 DELIMITER ','
 CSV HEADER;
 
-CREATE TABLE IF NOT EXISTS dept_manager (
+CREATE TABLE dept_manager (
     dept_no VARCHAR   NOT NULL,
     emp_no INT   NOT NULL,
     FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
@@ -58,7 +58,7 @@ FROM 'C:\Users\Public\CSV_Files\dept_manager.csv'
 DELIMITER ','
 CSV HEADER;
 
-CREATE TABLE IF NOT EXISTS dept_emp (
+CREATE TABLE dept_emp (
     emp_no INT   NOT NULL,
     dept_no VARCHAR   NOT NULL,
     FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
@@ -71,7 +71,7 @@ FROM 'C:\Users\Public\CSV_Files\dept_emp.csv'
 DELIMITER ','
 CSV HEADER;
 
-CREATE TABLE IF NOT EXISTS salaries (
+CREATE TABLE salaries (
     emp_no INT   NOT NULL,
     salary INT   NOT NULL,
     FOREIGN KEY (emp_no) REFERENCES employees (emp_no),

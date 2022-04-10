@@ -1,8 +1,5 @@
-SELECT * FROM employees;
 -- List the following details of each employee: employee number, last name, first name, sex, and salary.
-DROP VIEW IF EXISTS Emp_salary;
-
-SELECT employees.emp_no, last_name, first_name, sex, salary FROM employees INNER JOIN salaries ON employees.emp_no=salaries.emp_no;
+SELECT employees.emp_no, last_name, first_name, sex, salary FROM employees INNER JOIN salaries ON employees.emp_no=salaries.emp_no ORDER BY employees.emp_no;
 
 -- List first name, last name, and hire date for employees who were hired in 1986.
 SELECT first_name, last_name, hire_date FROM employees WHERE TO_CHAR(hire_date, 'yyyy') = '1986';
@@ -33,10 +30,4 @@ SELECT employees.emp_no, last_name, first_name, (SELECT dept_name FROM departmen
 
 -- List the frequency count of employee last names (i.e., how many employees share each last name) in descending order.
 SELECT last_name, count(last_name) as "name count" FROM employees group by last_name ORDER BY "name count" DESC;
-
--- CREATE additional VIEW TABLE for jupyter.
-
-CREATE VIEW Emp_salary AS (
-	SELECT employees.emp_no, last_name, first_name, sex, salary, (SELECT title FROM titles WHERE titles.title_id=employees.emp_title_id) FROM employees 
-	INNER JOIN salaries ON employees.emp_no=salaries.emp_no);
 
