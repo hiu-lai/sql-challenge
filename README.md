@@ -57,7 +57,7 @@ postgresql = {'pguser':'{username}',
 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.  
 ![image](EmployeeSQL/images/task03.png)  
 
-4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+4. List the department of each employee with the following information: employee number, last name, first name, and department name.  
 ![image](EmployeeSQL/images/task04.png)  
 
 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."  
